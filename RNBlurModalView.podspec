@@ -16,10 +16,10 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
 
 
-  s.author             = { "MMizogaki" => "voice.hito@gmail.com" }
+  s.author       = { "MMizogaki" => "voice.hito@gmail.com" }
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "http://EXAMPLE/RNBlurModalView.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/MMasahito/RNBlurModalView.git", :tag => "1.0.0" }
   s.source_files = 'RNBlurModalView.{h,m}'
   s.frameworks   = 'QuartzCore', 'Accelerate'
   s.requires_arc = true
