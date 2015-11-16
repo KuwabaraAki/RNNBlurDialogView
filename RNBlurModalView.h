@@ -1,8 +1,8 @@
 /*
  * RNBlurModal
  *
- * Created by Ryan Nystrom on 10/2/12.
- * Copyright (c) 2012 Ryan Nystrom. All rights reserved.
+ * Created by Ryan Nystrom & MMizogaki on 10/2/12.
+ * Copyright (c) 2012 Ryan Nystrom & MMizogaki . All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal

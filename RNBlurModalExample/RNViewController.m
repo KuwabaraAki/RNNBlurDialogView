@@ -48,17 +48,16 @@
 
 - (IBAction)onDemoButton:(id)sender {
 #warning Change this to see a custom view
-    BOOL useCustomView = NO;
+    BOOL useCustomView = YES;
         
     RNBlurModalView *modal;
     if (useCustomView) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 190)];
         view.backgroundColor = [UIColor redColor];
-        view.layer.cornerRadius = 5.f;
-        view.layer.borderColor = [UIColor blackColor].CGColor;
-        view.layer.borderWidth = 5.f;
+
         
         modal = [[RNBlurModalView alloc] initWithView:view];
+        modal.dismissButtonRight = YES;
     }
     else {
         modal = [[RNBlurModalView alloc] initWithTitle:@"Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world!" message:@"This is the default modal for RNBlurModalView. Feel free to pass any UIView to it as you wish!"];

@@ -1,8 +1,8 @@
 /*
  * RNBlurModal
  *
- * Created by Ryan Nystrom on 10/2/12.
- * Copyright (c) 2012 Ryan Nystrom. All rights reserved.
+ * Created by Ryan Nystrom & MMizogaki on 10/2/12.
+ * Copyright (c) 2012 Ryan Nystrom& MMizogaki . All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -148,9 +148,6 @@ typedef void (^RNBlurCompletion)(void);
         
         self.alpha = 0.f;
         self.backgroundColor = [UIColor clearColor];
-//        self.backgroundColor = [UIColor redColor];
-//        self.layer.borderWidth = 2.f;
-//        self.layer.borderColor = [UIColor blackColor].CGColor;
         
         self.autoresizingMask = (UIViewAutoresizingFlexibleWidth |
                                   UIViewAutoresizingFlexibleHeight |
@@ -233,7 +230,7 @@ typedef void (^RNBlurCompletion)(void);
     [super layoutSubviews];
     
     CGFloat centerX = self.dismissButtonRight ? _contentView.right : _contentView.left;
-    _dismissButton.center = CGPointMake(centerX, _contentView.top);
+    _dismissButton.center = CGPointMake(centerX -20, _contentView.top +20);
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
@@ -517,6 +514,7 @@ typedef void (^RNBlurCompletion)(void);
         closeButtonImage = [self closeButtonImage];
     });
     [self setBackgroundImage:closeButtonImage forState:UIControlStateNormal];
+    
     self.accessibilityTraits |= UIAccessibilityTraitButton;
     self.accessibilityLabel = NSLocalizedString(@"Dismiss Alert", @"Dismiss Alert Close Button");
     self.accessibilityHint = NSLocalizedString(@"Dismisses this alert.",@"Dismiss Alert close button hint");
@@ -529,10 +527,10 @@ typedef void (^RNBlurCompletion)(void);
     //// General Declarations
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
+   
     //// Color Declarations
-    UIColor *topGradient = [UIColor colorWithRed:0.21 green:0.21 blue:0.21 alpha:0.9];
-    UIColor *bottomGradient = [UIColor colorWithRed:0.03 green:0.03 blue:0.03 alpha:0.9];
+    UIColor *topGradient = [UIColor clearColor];
+    UIColor *bottomGradient = [UIColor clearColor];
     
     //// Gradient Declarations
     NSArray *gradientColors = @[(id)topGradient.CGColor,
@@ -541,10 +539,10 @@ typedef void (^RNBlurCompletion)(void);
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
     
     //// Shadow Declarations
-    CGColorRef shadow = [UIColor blackColor].CGColor;
+    CGColorRef shadow = [UIColor clearColor].CGColor;
     CGSize shadowOffset = CGSizeMake(0, 1);
     CGFloat shadowBlurRadius = 3;
-    CGColorRef shadow2 = [UIColor blackColor].CGColor;
+    CGColorRef shadow2 = [UIColor clearColor].CGColor;
     CGSize shadow2Offset = CGSizeMake(0, 1);
     CGFloat shadow2BlurRadius = 0;
     
@@ -558,8 +556,8 @@ typedef void (^RNBlurCompletion)(void);
     
     CGContextSaveGState(context);
     CGContextSetShadowWithColor(context, shadowOffset, shadowBlurRadius, shadow);
-    [[UIColor whiteColor] setStroke];
-    ovalPath.lineWidth = 2;
+    [[UIColor clearColor] setStroke];
+    ovalPath.lineWidth = 1;
     [ovalPath stroke];
     CGContextRestoreGState(context);
     
@@ -582,7 +580,7 @@ typedef void (^RNBlurCompletion)(void);
     [bezierPath closePath];
     CGContextSaveGState(context);
     CGContextSetShadowWithColor(context, shadow2Offset, shadow2BlurRadius, shadow2);
-    [[UIColor whiteColor] setFill];
+    [[UIColor blackColor] setFill];
     [bezierPath fill];
     CGContextRestoreGState(context);
     
@@ -697,7 +695,7 @@ typedef void (^RNBlurCompletion)(void);
     //clean up
     CGContextRelease(ctx);
     CGColorSpaceRelease(colorSpace);
-    free(pixelBuffer2)
+    free(pixelBuffer2);
     free(pixelBuffer);
     CFRelease(inBitmapData);
     
