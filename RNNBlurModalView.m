@@ -148,11 +148,24 @@ typedef void (^RNNBlurCompletion)(void);
 
 - (id)initWithView:(NSString*)title topButtonTitle:(NSString *)topTitle downButtonTile:(NSString*)downTitle backColor:(UIColor*)backC LineColor:(UIColor*)lineC {
     
+    float viewheight = 4;
+    float topPointY = 4;
+    float duringDraftSaveButtonPointY = 3.5;
+    float duringConsiderationButtonPointY = 1.6;
+    
+    if ((topTitle == nil) ||(downTitle == nil)) {
+        viewheight = 7.0;
+        topPointY = 3;
+        duringDraftSaveButtonPointY = 2.0;
+        duringConsiderationButtonPointY = 2.0;
+    }
+    
+    
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                             0,
                                                             [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.width/1.4,
-                                                            [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.height/4)];
+                                                            [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.height/viewheight)];
     view.backgroundColor = backC;
     view.layer.masksToBounds = YES;
     view.layer.cornerRadius = 7.0f;
@@ -165,11 +178,13 @@ typedef void (^RNNBlurCompletion)(void);
     view.layer.borderWidth = 1.0f;
     
     UIView *viewLineTop = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                                   view.frame.size.height/4,
+                                                                   view.frame.size.height/topPointY,
                                                                    view.frame.size.width,
                                                                    1)];
     viewLineTop.backgroundColor = lineC;
     [view addSubview:viewLineTop];
+    
+    
     
     UIView *viewLineDown = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                     view.frame.size.height/1.65,
@@ -178,39 +193,47 @@ typedef void (^RNNBlurCompletion)(void);
     viewLineDown.backgroundColor = lineC;
     [view addSubview:viewLineDown];
     
+    if ((topTitle == nil) ||(downTitle == nil))  {
+        [viewLineDown removeFromSuperview];
+    }
+    
     
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0,
                                                               0,
                                                               view.frame.size.width,
-                                                              view.frame.size.height/4)];
+                                                              view.frame.size.height/topPointY)];
     label.backgroundColor = [UIColor clearColor];
     label.text = title;
     [label setFont:[UIFont systemFontOfSize:13]];
     label.textAlignment = UIBaselineAdjustmentAlignCenters;
     [view addSubview:label];
     
-    _duringDraftSaveButton = [[UIButton alloc]initWithFrame:CGRectMake(15,
-                                                                       view.frame.size.height/3.5,
-                                                                       view.frame.size.width,
-                                                                       view.frame.size.height/3)];
-    [_duringDraftSaveButton setTitle:topTitle forState:UIControlStateNormal];
-    [_duringDraftSaveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_duringDraftSaveButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
-    _duringDraftSaveButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    _duringDraftSaveButton.titleLabel.numberOfLines = 2;
-    [view addSubview:_duringDraftSaveButton];
-    
-    _duringConsiderationButton = [[UIButton alloc]initWithFrame:CGRectMake(15,
-                                                                           view.frame.size.height/1.6,
+    if (topTitle != nil) {
+        _duringDraftSaveButton = [[UIButton alloc]initWithFrame:CGRectMake(15,
+                                                                           view.frame.size.height/duringDraftSaveButtonPointY,
                                                                            view.frame.size.width,
                                                                            view.frame.size.height/3)];
-    [_duringConsiderationButton setTitle:downTitle forState:UIControlStateNormal];
-    [_duringConsiderationButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_duringConsiderationButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
-    _duringConsiderationButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    _duringConsiderationButton.titleLabel.numberOfLines = 2;
-    [view addSubview:_duringConsiderationButton];
+        [_duringDraftSaveButton setTitle:topTitle forState:UIControlStateNormal];
+        [_duringDraftSaveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_duringDraftSaveButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        _duringDraftSaveButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        _duringDraftSaveButton.titleLabel.numberOfLines = 2;
+        [view addSubview:_duringDraftSaveButton];
+    }
     
+    if (downTitle != nil) {
+        
+        _duringConsiderationButton = [[UIButton alloc]initWithFrame:CGRectMake(15,
+                                                                               view.frame.size.height/duringConsiderationButtonPointY,
+                                                                               view.frame.size.width,
+                                                                               view.frame.size.height/3)];
+        [_duringConsiderationButton setTitle:downTitle forState:UIControlStateNormal];
+        [_duringConsiderationButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_duringConsiderationButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        _duringConsiderationButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        _duringConsiderationButton.titleLabel.numberOfLines = 2;
+        [view addSubview:_duringConsiderationButton];
+    }
     _duringDraftSaveButton.exclusiveTouch = YES;
     _duringConsiderationButton.exclusiveTouch = YES;
     
@@ -344,7 +367,7 @@ typedef void (^RNNBlurCompletion)(void);
 
 - (void)duringDraftSaveButtonTapped:(UIButton*)button {
     
-   [self hideWithDuration:kRNNBlurDefaultDelay delay:0 options:kNilOptions completion:self.topButtonTappedBlock];
+    [self hideWithDuration:kRNNBlurDefaultDelay delay:0 options:kNilOptions completion:self.topButtonTappedBlock];
 }
 
 - (void)duringConsiderationButtonTapped:(UIButton*)button {

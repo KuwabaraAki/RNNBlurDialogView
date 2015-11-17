@@ -50,8 +50,8 @@
     
     RNNBlurModalView *modal;
     modal = [[RNNBlurModalView alloc] initWithView:@"Test"
-                                    topButtonTitle:@"Top"
-                                    downButtonTile:@"Down\nDown"
+                                    topButtonTitle:nil
+                                    downButtonTile:@"down"
                                          backColor:[UIColor whiteColor]
                                          LineColor:[UIColor colorWithRed:0.7896 green:0.7896 blue:0.7896 alpha:1.0]];
     modal.dismissButtonRight = YES;
@@ -59,10 +59,10 @@
         NSLog(@"Code called after the modal view is hidden");
     };
     modal.topButtonTappedBlock = ^{
-        NSLog(@"Code called after the modal view is hidden");
+        NSLog(@"Top");
     };
     modal.downButtonTappedBlock = ^{
-        NSLog(@"Code called after the modal view is hidden");
+        NSLog(@"Down");
     };
     
     
