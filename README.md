@@ -13,7 +13,7 @@ CustomAlertView
 
 
 ### App Image ###
-![Alt Text](https://github.com/MMasahito/RNNBlurModal/blob/master/dev.gif)  
+![Alt Text](https://github.com/MMasahito/RNBlurModalView/blob/master/dev.gif)  
 
 ### Memo ###
 iOS9 correspondence.  
