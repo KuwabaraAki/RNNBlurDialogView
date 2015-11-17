@@ -49,27 +49,19 @@
 - (IBAction)onDemoButton:(id)sender {
     
     RNNBlurModalView *modal;
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,
-                                                            0,
-                                                            [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.width/1.2,
-                                                            [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.width/2)];
-    view.backgroundColor = [UIColor colorWithRed:0.774 green:0.774 blue:0.774 alpha:1.0];
-    view.layer.masksToBounds = YES;
-    view.layer.cornerRadius = 10.0f;
-    view.layer.shadowOffset = CGSizeMake(15.0f, 15.0f);
-    view.layer.shadowOpacity = 5.5f;
-    view.layer.shadowColor = [UIColor blackColor].CGColor;
-    view.layer.shadowRadius = 5.0f;
-    view.layer.borderColor = [UIColor grayColor].CGColor;
-    view.layer.borderWidth = 1.0f;
-
-    
-    modal = [[RNNBlurModalView alloc] initWithView:view];
+    modal = [[RNNBlurModalView alloc] initWithView:@"Test" topButtonTitle:@"Top" downButtonTile:@"Down\nDown"];
     modal.dismissButtonRight = YES;
     modal.defaultHideBlock = ^{
         NSLog(@"Code called after the modal view is hidden");
     };
+    modal.topButtonTappedBlock = ^{
+        NSLog(@"Code called after the modal view is hidden");
+    };
+    modal.downButtonTappedBlock = ^{
+        NSLog(@"Code called after the modal view is hidden");
+    };
+    
+    
     [modal show];
 }
 

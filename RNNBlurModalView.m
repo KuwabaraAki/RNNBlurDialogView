@@ -79,6 +79,8 @@ typedef void (^RNNBlurCompletion)(void);
     UIView *_parentView;
     UIView *_contentView;
     RNNCloseButton *_dismissButton;
+    UIButton *_duringDraftSaveButton;
+    UIButton *_duringConsiderationButton;
     RNNBlurView *_blurView;
     RNNBlurCompletion _completion;
 }
@@ -86,17 +88,23 @@ typedef void (^RNNBlurCompletion)(void);
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        
+        
         _dismissButton = [[RNNCloseButton alloc] init];
         _dismissButton.center = CGPointZero;
         [_dismissButton addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
+        
+        [_duringDraftSaveButton addTarget:self action:@selector(duringDraftSaveButtonTapped:)forControlEvents:UIControlEventTouchUpInside];
+        [_duringConsiderationButton addTarget:self action:@selector(duringConsiderationButtonTapped:)forControlEvents:UIControlEventTouchUpInside];
+        
         
         self.alpha = 0.f;
         self.backgroundColor = [UIColor clearColor];
         
         self.autoresizingMask = (UIViewAutoresizingFlexibleWidth |
-                                  UIViewAutoresizingFlexibleHeight |
-                                  UIViewAutoresizingFlexibleLeftMargin |
-                                  UIViewAutoresizingFlexibleTopMargin);
+                                 UIViewAutoresizingFlexibleHeight |
+                                 UIViewAutoresizingFlexibleLeftMargin |
+                                 UIViewAutoresizingFlexibleTopMargin);
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationDidChangeNotification:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
     }
@@ -138,7 +146,74 @@ typedef void (^RNNBlurCompletion)(void);
 }
 
 
-- (id)initWithView:(UIView*)view {
+- (id)initWithView:(NSString*)title topButtonTitle:(NSString *)topTitle downButtonTile:(NSString*)downTitle {
+    
+    UIColor *line = [UIColor colorWithRed:0.7896 green:0.7896 blue:0.7896 alpha:1.0];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                            0,
+                                                            [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.width/1.4,
+                                                            [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.height/4)];
+    view.backgroundColor = [UIColor whiteColor];
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = 7.0f;
+    view.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+    view.layer.shadowRadius = 3.0f;
+    view.layer.shadowOpacity = 1.5f;
+    view.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
+    view.layer.shouldRasterize = YES;
+    view.layer.borderColor = line.CGColor;
+    view.layer.borderWidth = 1.0f;
+    
+    UIView *viewLineTop = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                   view.frame.size.height/4,
+                                                                   view.frame.size.width,
+                                                                   1)];
+    viewLineTop.backgroundColor = line;
+    [view addSubview:viewLineTop];
+    
+    UIView *viewLineDown = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                                    view.frame.size.height/1.65,
+                                                                    view.frame.size.width,
+                                                                    1)];
+    viewLineDown.backgroundColor = line;
+    [view addSubview:viewLineDown];
+    
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0,
+                                                              0,
+                                                              view.frame.size.width,
+                                                              view.frame.size.height/4)];
+    label.backgroundColor = [UIColor clearColor];
+    label.text = title;
+    [label setFont:[UIFont systemFontOfSize:13]];
+    label.textAlignment = UIBaselineAdjustmentAlignCenters;
+    [view addSubview:label];
+    
+    _duringDraftSaveButton = [[UIButton alloc]initWithFrame:CGRectMake(15,
+                                                                       view.frame.size.height/3.5,
+                                                                       view.frame.size.width,
+                                                                       view.frame.size.height/3)];
+    [_duringDraftSaveButton setTitle:topTitle forState:UIControlStateNormal];
+    [_duringDraftSaveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_duringDraftSaveButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    _duringDraftSaveButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _duringDraftSaveButton.titleLabel.numberOfLines = 2;
+    [view addSubview:_duringDraftSaveButton];
+    
+    _duringConsiderationButton = [[UIButton alloc]initWithFrame:CGRectMake(15,
+                                                                           view.frame.size.height/1.6,
+                                                                           view.frame.size.width,
+                                                                           view.frame.size.height/3)];
+    [_duringConsiderationButton setTitle:downTitle forState:UIControlStateNormal];
+    [_duringConsiderationButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_duringConsiderationButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+    _duringConsiderationButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    _duringConsiderationButton.titleLabel.numberOfLines = 2;
+    [view addSubview:_duringConsiderationButton];
+    
+    _duringDraftSaveButton.exclusiveTouch = YES;
+    _duringConsiderationButton.exclusiveTouch = YES;
+    
     if (self = [self initWithParentView:[[UIApplication sharedApplication].delegate window].rootViewController.view view:view]) {
         // nothing to see here
     }
@@ -162,9 +237,9 @@ typedef void (^RNNBlurCompletion)(void);
 
 
 - (void)orientationDidChangeNotification:(NSNotification*)notification {
-	if ([self isVisible]) {
-		[self performSelector:@selector(updateSubviews) withObject:nil afterDelay:0.3f];
-	}
+    if ([self isVisible]) {
+        [self performSelector:@selector(updateSubviews) withObject:nil afterDelay:0.3f];
+    }
 }
 
 
@@ -177,17 +252,17 @@ typedef void (^RNNBlurCompletion)(void);
         _blurView = [[RNNBlurView alloc] initWithCoverView:_controller.view];
         _blurView.alpha = 1.f;
         [_controller.view insertSubview:_blurView belowSubview:self];
-
+        
     }
     else if(_parentView) {
         _blurView = [[RNNBlurView alloc] initWithCoverView:_parentView];
         _blurView.alpha = 1.f;
         [_parentView insertSubview:_blurView belowSubview:self];
-
+        
     }
     
     self.hidden = NO;
-
+    
     _contentView.center = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
     _dismissButton.center = _contentView.origin;
 }
@@ -222,7 +297,7 @@ typedef void (^RNNBlurCompletion)(void);
             }
             else if(_parentView) {
                 self.frame = CGRectMake(0, 0, _parentView.bounds.size.width, _parentView.bounds.size.height);
-
+                
                 [_parentView addSubview:self];
             }
             self.top = 0;
@@ -232,14 +307,14 @@ typedef void (^RNNBlurCompletion)(void);
             _blurView = [[RNNBlurView alloc] initWithCoverView:_controller.view];
             _blurView.alpha = 0.f;
             self.frame = CGRectMake(0, 0, _controller.view.bounds.size.width, _controller.view.bounds.size.height);
-
+            
             [_controller.view insertSubview:_blurView belowSubview:self];
         }
         else if(_parentView) {
             _blurView = [[RNNBlurView alloc] initWithCoverView:_parentView];
             _blurView.alpha = 0.f;
             self.frame = CGRectMake(0, 0, _parentView.bounds.size.width, _parentView.bounds.size.height);
-
+            
             [_parentView insertSubview:_blurView belowSubview:self];
         }
         
@@ -257,15 +332,26 @@ typedef void (^RNNBlurCompletion)(void);
                 }
             }
         }];
-
+        
     }
-
+    
 }
 
 
 - (void)hide {
     [self hideWithDuration:kRNNBlurDefaultDelay delay:0 options:kNilOptions completion:self.defaultHideBlock];
 }
+
+- (void)duringDraftSaveButtonTapped:(UIButton*)button {
+    
+   [self hideWithDuration:kRNNBlurDefaultDelay delay:0 options:kNilOptions completion:self.topButtonTappedBlock];
+}
+
+- (void)duringConsiderationButtonTapped:(UIButton*)button {
+    
+    [self hideWithDuration:kRNNBlurDefaultDelay delay:0 options:kNilOptions completion:self.downButtonTappedBlock];
+}
+
 
 
 - (void)hideWithDuration:(CGFloat)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options completion:(void (^)(void))completion {
@@ -425,7 +511,7 @@ typedef void (^RNNBlurCompletion)(void);
     if(!(self = [super initWithFrame:(CGRect){0, 0, 42, 42}])){
         return nil;
     }
-   
+    
     self.accessibilityTraits |= UIAccessibilityTraitButton;
     [self setTitle:@"×" forState:UIControlStateNormal];
     [self.titleLabel setFont:[UIFont systemFontOfSize:23]];
@@ -482,7 +568,7 @@ typedef void (^RNNBlurCompletion)(void);
     
     CGDataProviderRef inProvider = CGImageGetDataProvider(img);
     CFDataRef inBitmapData = CGDataProviderCopyData(inProvider);
-
+    
     
     inBuffer.width = CGImageGetWidth(img);
     inBuffer.height = CGImageGetHeight(img);
@@ -514,7 +600,7 @@ typedef void (^RNNBlurCompletion)(void);
     error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer2, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
     error = vImageBoxConvolve_ARGB8888(&outBuffer2, &inBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
     error = vImageBoxConvolve_ARGB8888(&inBuffer, &outBuffer, NULL, 0, 0, boxSize, boxSize, NULL, kvImageEdgeExtend);
-
+    
     if (error) {
         NSLog(@"error from convolution %ld", error);
     }
