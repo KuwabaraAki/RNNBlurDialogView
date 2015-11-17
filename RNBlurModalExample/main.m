@@ -2,17 +2,17 @@
 //  main.m
 //  RNBlurModalExample
 //
-//  Created by Ryan Nystrom on 10/17/12.
-//  Copyright (c) 2012 Ryan Nystrom. All rights reserved.
+// Created by MMizogaki on 10/2/15.
+// Copyright (c) 2015 MMizogaki . All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#import "RNAppDelegate.h"
+#import "RNNAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([RNAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([RNNAppDelegate class]));
     }
 }

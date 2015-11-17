@@ -1,8 +1,8 @@
 /*
- * RNBlurModal
+ * RNNBlurModal
  *
- * Created by Ryan Nystrom on 10/2/12.
- * Copyright (c) 2012 Ryan Nystrom. All rights reserved.
+ * Created by MMizogaki on 10/2/15.
+ * Copyright (c) 2015 MMizogaki . All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RNViewController : UIViewController
+@interface RNNAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end

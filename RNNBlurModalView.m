@@ -1,8 +1,8 @@
 /*
- * RNBlurModal
+ * RNNBlurModal
  *
- * Created by Ryan Nystrom & MMizogaki on 10/2/12.
- * Copyright (c) 2012 Ryan Nystrom& MMizogaki . All rights reserved.
+ * Created by MMizogaki on 10/2/15.
+ * Copyright (c) 2015 MMizogaki . All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,30 +23,20 @@
  * SOFTWARE.
  */
 
-#import "RNBlurModalView.h"
+#import "RNNBlurModalView.h"
 #import <Accelerate/Accelerate.h>
 #import <QuartzCore/QuartzCore.h>
 
-/*
-    This bit is important! In order to prevent capturing selected states of UIResponders I've implemented a delay. Please feel free to set this delay to *whatever* you deem apprpriate.
-    I've defaulted it to 0.125 seconds. You can do shorter/longer as you see fit. 
- */
-CGFloat const kRNBlurDefaultDelay = 0.125f;
+CGFloat const kRNNBlurDefaultDelay = 0.125f;
+CGFloat const kRNNDefaultBlurScale = 0.2f;
+CGFloat const kRNNBlurDefaultDuration = 0.2f;
+CGFloat const kRNNBlurViewMaxAlpha = 1.f;
+CGFloat const kRNNBlurBounceOutDurationScale = 0.8f;
 
-/*
-    You can also change this constant to make the blur more "blurry". I recommend the tasteful level of 0.2 and no higher. However, you are free to change this from 0.0 to 1.0.
- */
-CGFloat const kRNDefaultBlurScale = 0.2f;
+NSString * const kRNNBlurDidShowNotification  = @"github.com/MMasahito.RNNBlurModalView.show";
+NSString * const kRNNBlurDidHidewNotification = @"github.com/MMasahito.RNNBlurModalView.hide";
 
-CGFloat const kRNBlurDefaultDuration = 0.2f;
-CGFloat const kRNBlurViewMaxAlpha = 1.f;
-
-CGFloat const kRNBlurBounceOutDurationScale = 0.8f;
-
-NSString * const kRNBlurDidShowNotification = @"com.whoisryannystrom.RNBlurModalView.show";
-NSString * const kRNBlurDidHidewNotification = @"com.whoisryannystrom.RNBlurModalView.hide";
-
-typedef void (^RNBlurCompletion)(void);
+typedef void (^RNNBlurCompletion)(void);
 
 @interface UILabel (AutoSize)
 - (void)autoHeight;
@@ -71,78 +61,32 @@ typedef void (^RNBlurCompletion)(void);
 -(UIImage *)boxblurImageWithBlur:(CGFloat)blur;
 @end
 
-@interface RNBlurView : UIImageView
+@interface RNNBlurView : UIImageView
 - (id)initWithCoverView:(UIView*)view;
 @end
 
-@interface RNCloseButton : UIButton
+@interface RNNCloseButton : UIButton
 @end
 
-@interface RNBlurModalView ()
+@interface RNNBlurModalView ()
 @property (assign, readwrite) BOOL isVisible;
 @end
 
-#pragma mark - RNBlurModalView
+#pragma mark - RNNBlurModalView
 
-@implementation RNBlurModalView {
+@implementation RNNBlurModalView {
     UIViewController *_controller;
     UIView *_parentView;
     UIView *_contentView;
-    RNCloseButton *_dismissButton;
-    RNBlurView *_blurView;
-    RNBlurCompletion _completion;
-}
-
-+ (UIView*)generateModalViewWithTitle:(NSString*)title message:(NSString*)message {
-    CGFloat defaultWidth = 280.f;
-    CGRect frame = CGRectMake(0, 0, defaultWidth, 0);
-    CGFloat padding = 10.f;
-    UIView *view = [[UIView alloc] initWithFrame:frame];
-    
-    UIColor *whiteColor = [UIColor colorWithRed:0.816 green:0.788 blue:0.788 alpha:1.000];
-    
-    view.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.8f];
-    view.layer.borderColor = whiteColor.CGColor;
-    view.layer.borderWidth = 2.f;
-    view.layer.cornerRadius = 10.f;
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(padding, 0, defaultWidth - padding * 2.f, 0)];
-    titleLabel.text = title;
-    titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17.f];
-    titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.shadowColor = [UIColor blackColor];
-    titleLabel.shadowOffset = CGSizeMake(0, -1);
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.backgroundColor = [UIColor clearColor];
-    [titleLabel autoHeight];
-    titleLabel.numberOfLines = 0;
-    titleLabel.top = padding;
-    [view addSubview:titleLabel];
-    
-    UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(padding, 0, defaultWidth - padding * 2.f, 0)];
-    messageLabel.text = message;
-    messageLabel.numberOfLines = 0;
-    messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:17.f];
-    messageLabel.textColor = titleLabel.textColor;
-    messageLabel.shadowOffset = titleLabel.shadowOffset;
-    messageLabel.shadowColor = titleLabel.shadowColor;
-    messageLabel.textAlignment = NSTextAlignmentCenter;
-    messageLabel.backgroundColor = [UIColor clearColor];
-    [messageLabel autoHeight];
-    messageLabel.top = titleLabel.bottom + padding;
-    [view addSubview:messageLabel];
-    
-    view.height = messageLabel.bottom + padding;
-    
-    view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleRightMargin;
-    
-    return view;
+    RNNCloseButton *_dismissButton;
+    RNNBlurView *_blurView;
+    RNNBlurCompletion _completion;
 }
 
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        _dismissButton = [[RNCloseButton alloc] init];
+        _dismissButton = [[RNNCloseButton alloc] init];
         _dismissButton.center = CGPointZero;
         [_dismissButton addTarget:self action:@selector(hide) forControlEvents:UIControlEventTouchUpInside];
         
@@ -177,15 +121,6 @@ typedef void (^RNBlurCompletion)(void);
     return self;
 }
 
-
-- (id)initWithViewController:(UIViewController*)viewController title:(NSString*)title message:(NSString*)message {
-    UIView *view = [RNBlurModalView generateModalViewWithTitle:title message:message];
-    if (self = [self initWithViewController:viewController view:view]) {
-        // nothing to see here
-    }
-    return self;
-}
-
 - (id)initWithParentView:(UIView*)parentView view:(UIView*)view {
     if (self = [self initWithFrame:CGRectMake(0, 0, parentView.width, parentView.height)]) {
         [self addSubview:view];
@@ -202,14 +137,6 @@ typedef void (^RNBlurCompletion)(void);
     return self;
 }
 
-- (id)initWithParentView:(UIView*)parentView title:(NSString*)title message:(NSString*)message {
-    UIView *view = [RNBlurModalView generateModalViewWithTitle:title message:message];
-    if (self = [self initWithParentView:parentView view:view]) {
-        // nothing to see here
-    }
-    return self;
-}
-
 
 - (id)initWithView:(UIView*)view {
     if (self = [self initWithParentView:[[UIApplication sharedApplication].delegate window].rootViewController.view view:view]) {
@@ -218,19 +145,12 @@ typedef void (^RNBlurCompletion)(void);
     return self;
 }
 
-- (id)initWithTitle:(NSString*)title message:(NSString*)message {
-    UIView *view = [RNBlurModalView generateModalViewWithTitle:title message:message];
-    if (self = [self initWithView:view]) {
-        // nothing to see here
-    }
-    return self;
-}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     
     CGFloat centerX = self.dismissButtonRight ? _contentView.right : _contentView.left;
-    _dismissButton.center = CGPointMake(centerX -20, _contentView.top +20);
+    _dismissButton.center = CGPointMake(centerX -25, _contentView.top +25);
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
@@ -254,19 +174,17 @@ typedef void (^RNBlurCompletion)(void);
     // get new screenshot after orientation
     [_blurView removeFromSuperview]; _blurView = nil;
     if (_controller) {
-        _blurView = [[RNBlurView alloc] initWithCoverView:_controller.view];
+        _blurView = [[RNNBlurView alloc] initWithCoverView:_controller.view];
         _blurView.alpha = 1.f;
         [_controller.view insertSubview:_blurView belowSubview:self];
 
     }
     else if(_parentView) {
-        _blurView = [[RNBlurView alloc] initWithCoverView:_parentView];
+        _blurView = [[RNNBlurView alloc] initWithCoverView:_parentView];
         _blurView.alpha = 1.f;
         [_parentView insertSubview:_blurView belowSubview:self];
 
     }
-    
-    
     
     self.hidden = NO;
 
@@ -281,7 +199,7 @@ typedef void (^RNBlurCompletion)(void);
 
 
 - (void)show {
-    [self showWithDuration:kRNBlurDefaultDuration delay:0 options:kNilOptions completion:NULL];
+    [self showWithDuration:kRNNBlurDefaultDuration delay:0 options:kNilOptions completion:NULL];
 }
 
 
@@ -291,8 +209,7 @@ typedef void (^RNBlurCompletion)(void);
     self.animationOptions = options;
     _completion = [completion copy];
     
-    // delay so we dont get button states
-    [self performSelector:@selector(delayedShow) withObject:nil afterDelay:kRNBlurDefaultDelay];
+    [self performSelector:@selector(delayedShow) withObject:nil afterDelay:kRNNBlurDefaultDelay];
 }
 
 
@@ -312,14 +229,14 @@ typedef void (^RNBlurCompletion)(void);
         }
         
         if (_controller) {
-            _blurView = [[RNBlurView alloc] initWithCoverView:_controller.view];
+            _blurView = [[RNNBlurView alloc] initWithCoverView:_controller.view];
             _blurView.alpha = 0.f;
             self.frame = CGRectMake(0, 0, _controller.view.bounds.size.width, _controller.view.bounds.size.height);
 
             [_controller.view insertSubview:_blurView belowSubview:self];
         }
         else if(_parentView) {
-            _blurView = [[RNBlurView alloc] initWithCoverView:_parentView];
+            _blurView = [[RNNBlurView alloc] initWithCoverView:_parentView];
             _blurView.alpha = 0.f;
             self.frame = CGRectMake(0, 0, _parentView.bounds.size.width, _parentView.bounds.size.height);
 
@@ -333,7 +250,7 @@ typedef void (^RNBlurCompletion)(void);
             self.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.f, 1.f);
         } completion:^(BOOL finished) {
             if (finished) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:kRNBlurDidShowNotification object:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:kRNNBlurDidShowNotification object:nil];
                 self.isVisible = YES;
                 if (_completion) {
                     _completion();
@@ -347,7 +264,7 @@ typedef void (^RNBlurCompletion)(void);
 
 
 - (void)hide {
-    [self hideWithDuration:kRNBlurDefaultDuration delay:0 options:kNilOptions completion:self.defaultHideBlock];
+    [self hideWithDuration:kRNNBlurDefaultDelay delay:0 options:kNilOptions completion:self.defaultHideBlock];
 }
 
 
@@ -366,7 +283,7 @@ typedef void (^RNBlurCompletion)(void);
                                  _blurView = nil;
                                  [self removeFromSuperview];
                                  
-                                 [[NSNotificationCenter defaultCenter] postNotificationName:kRNBlurDidHidewNotification object:nil];
+                                 [[NSNotificationCenter defaultCenter] postNotificationName:kRNNBlurDidHidewNotification object:nil];
                                  self.isVisible = NO;
                                  if (completion) {
                                      completion();
@@ -382,9 +299,9 @@ typedef void (^RNBlurCompletion)(void);
 
 @end
 
-#pragma mark - RNBlurView
+#pragma mark - RNNBlurView
 
-@implementation RNBlurView {
+@implementation RNNBlurView {
     UIView *_coverView;
 }
 
@@ -392,7 +309,7 @@ typedef void (^RNBlurCompletion)(void);
     if (self = [super initWithFrame:CGRectMake(0, 0, view.bounds.size.width, view.bounds.size.height)]) {
         _coverView = view;
         UIImage *blur = [_coverView screenshot];
-        self.image = [blur boxblurImageWithBlur:kRNDefaultBlurScale];
+        self.image = [blur boxblurImageWithBlur:kRNNDefaultBlurScale];
     }
     return self;
 }
@@ -500,9 +417,9 @@ typedef void (^RNBlurCompletion)(void);
 
 @end
 
-#pragma mark - RNCloseButton
+#pragma mark - RNNCloseButton
 
-@implementation RNCloseButton
+@implementation RNNCloseButton
 
 - (id)init{
     if(!(self = [super initWithFrame:(CGRect){0, 0, 32, 32}])){
@@ -516,8 +433,6 @@ typedef void (^RNBlurCompletion)(void);
     [self setBackgroundImage:closeButtonImage forState:UIControlStateNormal];
     
     self.accessibilityTraits |= UIAccessibilityTraitButton;
-    self.accessibilityLabel = NSLocalizedString(@"Dismiss Alert", @"Dismiss Alert Close Button");
-    self.accessibilityHint = NSLocalizedString(@"Dismisses this alert.",@"Dismiss Alert close button hint");
     return self;
 }
 

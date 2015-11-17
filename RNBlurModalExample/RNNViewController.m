@@ -1,8 +1,8 @@
 /*
- * RNBlurModal
+ * RNNBlurModal
  *
- * Created by Ryan Nystrom on 10/2/12.
- * Copyright (c) 2012 Ryan Nystrom. All rights reserved.
+ * Created by MMizogaki on 10/2/15.
+ * Copyright (c) 2015 MMizogaki . All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,21 +23,21 @@
  * SOFTWARE.
  */
 
-#import "RNViewController.h"
-#import "RNBlurModalView.h"
+#import "RNNViewController.h"
+#import "RNNBlurModalView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface RNViewController ()
+@interface RNNViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
-@implementation RNViewController
+@implementation RNNViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,25 +47,27 @@
 }
 
 - (IBAction)onDemoButton:(id)sender {
-#warning Change this to see a custom view
-    BOOL useCustomView = YES;
-        
-    RNBlurModalView *modal;
-    if (useCustomView) {
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 190)];
-        view.backgroundColor = [UIColor redColor];
+    
+    RNNBlurModalView *modal;
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,
+                                                            0,
+                                                            [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.width/1.2,
+                                                            [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.width/2)];
+    view.backgroundColor = [UIColor colorWithRed:0.774 green:0.774 blue:0.774 alpha:1.0];
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = 25.0f;
+    view.layer.shadowOffset = CGSizeMake(15.0f, 15.0f);
+    view.layer.shadowOpacity = 5.5f;
+    view.layer.shadowColor = [UIColor blackColor].CGColor;
+    view.layer.shadowRadius = 5.0f;
 
-        
-        modal = [[RNBlurModalView alloc] initWithView:view];
-        modal.dismissButtonRight = YES;
-    }
-    else {
-        modal = [[RNBlurModalView alloc] initWithTitle:@"Hello world! Hello world! Hello world! Hello world! Hello world! Hello world! Hello world!" message:@"This is the default modal for RNBlurModalView. Feel free to pass any UIView to it as you wish!"];
-        modal.defaultHideBlock = ^{
-            NSLog(@"Code called after the modal view is hidden");
-        };
-    }
-//    modal.dismissButtonRight = YES;
+    
+    modal = [[RNNBlurModalView alloc] initWithView:view];
+    modal.dismissButtonRight = YES;
+    modal.defaultHideBlock = ^{
+        NSLog(@"Code called after the modal view is hidden");
+    };
     [modal show];
 }
 

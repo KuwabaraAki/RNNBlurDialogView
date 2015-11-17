@@ -13,19 +13,18 @@
 		866E0B44162F2F2D00DE51B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B43162F2F2D00DE51B9 /* CoreGraphics.framework */; };
 		866E0B4A162F2F2D00DE51B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B48162F2F2D00DE51B9 /* InfoPlist.strings */; };
 		866E0B4C162F2F2D00DE51B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B4B162F2F2D00DE51B9 /* main.m */; };
-		866E0B50162F2F2D00DE51B9 /* RNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B4F162F2F2D00DE51B9 /* RNAppDelegate.m */; };
+		866E0B50162F2F2D00DE51B9 /* RNNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B4F162F2F2D00DE51B9 /* RNNAppDelegate.m */; };
 		866E0B52162F2F2D00DE51B9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B51162F2F2D00DE51B9 /* Default.png */; };
 		866E0B54162F2F2D00DE51B9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B53162F2F2D00DE51B9 /* Default@2x.png */; };
 		866E0B56162F2F2D00DE51B9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B55162F2F2D00DE51B9 /* Default-568h@2x.png */; };
 		866E0B59162F2F2D00DE51B9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B57162F2F2D00DE51B9 /* MainStoryboard.storyboard */; };
-		866E0B5C162F2F2D00DE51B9 /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B5B162F2F2D00DE51B9 /* RNViewController.m */; };
-		866E0B64162F30AF00DE51B9 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B62162F30AF00DE51B9 /* Profile.png */; };
-		866E0B65162F30AF00DE51B9 /* Profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B63162F30AF00DE51B9 /* Profile@2x.png */; };
-		866E0B68162F31BE00DE51B9 /* RNBlurModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B67162F31BE00DE51B9 /* RNBlurModalView.m */; };
+		866E0B5C162F2F2D00DE51B9 /* RNNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B5B162F2F2D00DE51B9 /* RNNViewController.m */; };
+		866E0B68162F31BE00DE51B9 /* RNNBlurModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B67162F31BE00DE51B9 /* RNNBlurModalView.m */; };
 		866E0B6A162F323300DE51B9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B69162F323300DE51B9 /* QuartzCore.framework */; };
 		866E0B75162F44D400DE51B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B74162F44D400DE51B9 /* Accelerate.framework */; };
 		867FFEB31631E18500EE9936 /* MainStoryboard_ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867FFEB11631E18500EE9936 /* MainStoryboard_ipad.storyboard */; };
 		86A650D9163080D5001DD552 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A650D8163080D5001DD552 /* CoreImage.framework */; };
+		9C8E0CA21BFAC2EF00B18EB8 /* sample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E0CA11BFAC2EF00B18EB8 /* sample.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,23 +36,21 @@
 		866E0B47162F2F2D00DE51B9 /* RNBlurModalExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RNBlurModalExample-Info.plist"; sourceTree = "<group>"; };
 		866E0B49162F2F2D00DE51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		866E0B4B162F2F2D00DE51B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		866E0B4D162F2F2D00DE51B9 /* RNBlurModalExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNBlurModalExample-Prefix.pch"; sourceTree = "<group>"; };
-		866E0B4E162F2F2D00DE51B9 /* RNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNAppDelegate.h; sourceTree = "<group>"; };
-		866E0B4F162F2F2D00DE51B9 /* RNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNAppDelegate.m; sourceTree = "<group>"; };
+		866E0B4E162F2F2D00DE51B9 /* RNNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNAppDelegate.h; sourceTree = "<group>"; };
+		866E0B4F162F2F2D00DE51B9 /* RNNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNAppDelegate.m; sourceTree = "<group>"; };
 		866E0B51162F2F2D00DE51B9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		866E0B53162F2F2D00DE51B9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		866E0B55162F2F2D00DE51B9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		866E0B58162F2F2D00DE51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		866E0B5A162F2F2D00DE51B9 /* RNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNViewController.h; sourceTree = "<group>"; };
-		866E0B5B162F2F2D00DE51B9 /* RNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNViewController.m; sourceTree = "<group>"; };
-		866E0B62162F30AF00DE51B9 /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
-		866E0B63162F30AF00DE51B9 /* Profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Profile@2x.png"; sourceTree = "<group>"; };
-		866E0B66162F31BE00DE51B9 /* RNBlurModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNBlurModalView.h; sourceTree = SOURCE_ROOT; };
-		866E0B67162F31BE00DE51B9 /* RNBlurModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBlurModalView.m; sourceTree = SOURCE_ROOT; };
+		866E0B5A162F2F2D00DE51B9 /* RNNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNViewController.h; sourceTree = "<group>"; };
+		866E0B5B162F2F2D00DE51B9 /* RNNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNViewController.m; sourceTree = "<group>"; };
+		866E0B66162F31BE00DE51B9 /* RNNBlurModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNBlurModalView.h; sourceTree = SOURCE_ROOT; };
+		866E0B67162F31BE00DE51B9 /* RNNBlurModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNBlurModalView.m; sourceTree = SOURCE_ROOT; };
 		866E0B69162F323300DE51B9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		866E0B74162F44D400DE51B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		867FFEB21631E18500EE9936 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_ipad.storyboard; sourceTree = "<group>"; };
 		86A650D8163080D5001DD552 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		9C8E0CA11BFAC2EF00B18EB8 /* sample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +73,8 @@
 		866E0B30162F2F2D00DE51B9 = {
 			isa = PBXGroup;
 			children = (
-				866E0B66162F31BE00DE51B9 /* RNBlurModalView.h */,
-				866E0B67162F31BE00DE51B9 /* RNBlurModalView.m */,
+				866E0B66162F31BE00DE51B9 /* RNNBlurModalView.h */,
+				866E0B67162F31BE00DE51B9 /* RNNBlurModalView.m */,
 				866E0B45162F2F2D00DE51B9 /* RNBlurModalExample */,
 				866E0B3E162F2F2D00DE51B9 /* Frameworks */,
 				866E0B3C162F2F2D00DE51B9 /* Products */,
@@ -109,14 +106,13 @@
 		866E0B45162F2F2D00DE51B9 /* RNBlurModalExample */ = {
 			isa = PBXGroup;
 			children = (
+				9C8E0CA11BFAC2EF00B18EB8 /* sample.jpeg */,
 				867FFEB11631E18500EE9936 /* MainStoryboard_ipad.storyboard */,
-				866E0B62162F30AF00DE51B9 /* Profile.png */,
-				866E0B63162F30AF00DE51B9 /* Profile@2x.png */,
-				866E0B4E162F2F2D00DE51B9 /* RNAppDelegate.h */,
-				866E0B4F162F2F2D00DE51B9 /* RNAppDelegate.m */,
 				866E0B57162F2F2D00DE51B9 /* MainStoryboard.storyboard */,
-				866E0B5A162F2F2D00DE51B9 /* RNViewController.h */,
-				866E0B5B162F2F2D00DE51B9 /* RNViewController.m */,
+				866E0B4E162F2F2D00DE51B9 /* RNNAppDelegate.h */,
+				866E0B4F162F2F2D00DE51B9 /* RNNAppDelegate.m */,
+				866E0B5A162F2F2D00DE51B9 /* RNNViewController.h */,
+				866E0B5B162F2F2D00DE51B9 /* RNNViewController.m */,
 				866E0B46162F2F2D00DE51B9 /* Supporting Files */,
 			);
 			path = RNBlurModalExample;
@@ -128,7 +124,6 @@
 				866E0B47162F2F2D00DE51B9 /* RNBlurModalExample-Info.plist */,
 				866E0B48162F2F2D00DE51B9 /* InfoPlist.strings */,
 				866E0B4B162F2F2D00DE51B9 /* main.m */,
-				866E0B4D162F2F2D00DE51B9 /* RNBlurModalExample-Prefix.pch */,
 				866E0B51162F2F2D00DE51B9 /* Default.png */,
 				866E0B53162F2F2D00DE51B9 /* Default@2x.png */,
 				866E0B55162F2F2D00DE51B9 /* Default-568h@2x.png */,
@@ -162,11 +157,11 @@
 		866E0B32162F2F2D00DE51B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = RN;
+				CLASSPREFIX = RNN;
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "Ryan Nystrom";
+				ORGANIZATIONNAME = MMizogaki;
 			};
-			buildConfigurationList = 866E0B35162F2F2D00DE51B9 /* Build configuration list for PBXProject "RNBlurModalExample" */;
+			buildConfigurationList = 866E0B35162F2F2D00DE51B9 /* Build configuration list for PBXProject "RNNBlurModalExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -189,12 +184,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				866E0B4A162F2F2D00DE51B9 /* InfoPlist.strings in Resources */,
+				9C8E0CA21BFAC2EF00B18EB8 /* sample.jpeg in Resources */,
 				866E0B52162F2F2D00DE51B9 /* Default.png in Resources */,
 				866E0B54162F2F2D00DE51B9 /* Default@2x.png in Resources */,
 				866E0B56162F2F2D00DE51B9 /* Default-568h@2x.png in Resources */,
 				866E0B59162F2F2D00DE51B9 /* MainStoryboard.storyboard in Resources */,
-				866E0B64162F30AF00DE51B9 /* Profile.png in Resources */,
-				866E0B65162F30AF00DE51B9 /* Profile@2x.png in Resources */,
 				867FFEB31631E18500EE9936 /* MainStoryboard_ipad.storyboard in Resources */,
 				3C5B27C2930419E66B84C9C0 /* RNBlurModalView.podspec in Resources */,
 			);
@@ -208,9 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				866E0B4C162F2F2D00DE51B9 /* main.m in Sources */,
-				866E0B50162F2F2D00DE51B9 /* RNAppDelegate.m in Sources */,
-				866E0B5C162F2F2D00DE51B9 /* RNViewController.m in Sources */,
-				866E0B68162F31BE00DE51B9 /* RNBlurModalView.m in Sources */,
+				866E0B50162F2F2D00DE51B9 /* RNNAppDelegate.m in Sources */,
+				866E0B5C162F2F2D00DE51B9 /* RNNViewController.m in Sources */,
+				866E0B68162F31BE00DE51B9 /* RNNBlurModalView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +261,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -288,7 +282,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -298,11 +292,11 @@
 		866E0B60162F2F2D00DE51B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RNBlurModalExample/RNBlurModalExample-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "RNBlurModalExample/RNBlurModalExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Ryan-Nystrom.${PRODUCT_NAME:rfc1034identifier}";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MMizogaki.RNNBlurModalExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -312,11 +306,11 @@
 		866E0B61162F2F2D00DE51B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RNBlurModalExample/RNBlurModalExample-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "RNBlurModalExample/RNBlurModalExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Ryan-Nystrom.${PRODUCT_NAME:rfc1034identifier}";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MMizogaki.RNNBlurModalExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -326,7 +320,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		866E0B35162F2F2D00DE51B9 /* Build configuration list for PBXProject "RNBlurModalExample" */ = {
+		866E0B35162F2F2D00DE51B9 /* Build configuration list for PBXProject "RNNBlurModalExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				866E0B5D162F2F2D00DE51B9 /* Debug */,

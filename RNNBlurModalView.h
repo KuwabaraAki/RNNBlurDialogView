@@ -1,8 +1,8 @@
 /*
- * RNBlurModal
+ * RNNBlurModal
  *
- * Created by Ryan Nystrom & MMizogaki on 10/2/12.
- * Copyright (c) 2012 Ryan Nystrom & MMizogaki . All rights reserved.
+ * Created by MMizogaki on 10/2/15.
+ * Copyright (c) 2015 MMizogaki . All rights reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@
 extern NSString * const kRNBlurDidShowNotification;
 extern NSString * const kRNBlurDidHidewNotification;
 
-@interface RNBlurModalView : UIView
+@interface RNNBlurModalView : UIView
 
 @property (assign, readonly) BOOL isVisible;
 
@@ -40,11 +40,9 @@ extern NSString * const kRNBlurDidHidewNotification;
 @property (nonatomic, copy) void (^defaultHideBlock)(void);
 
 - (id)initWithViewController:(UIViewController*)viewController view:(UIView*)view;
-- (id)initWithViewController:(UIViewController*)viewController title:(NSString*)title message:(NSString*)message;
 - (id)initWithParentView:(UIView*)parentView view:(UIView*)view;
-- (id)initWithParentView:(UIView*)parentView title:(NSString*)title message:(NSString*)message;
 - (id)initWithView:(UIView*)view;
-- (id)initWithTitle:(NSString*)title message:(NSString*)message;
+
 
 - (void)show;
 - (void)showWithDuration:(CGFloat)duration delay:(NSTimeInterval)delay options:(UIViewAnimationOptions)options completion:(void (^)(void))completion;
