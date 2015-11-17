@@ -49,7 +49,11 @@
 - (IBAction)onDemoButton:(id)sender {
     
     RNNBlurModalView *modal;
-    modal = [[RNNBlurModalView alloc] initWithView:@"Test" topButtonTitle:@"Top" downButtonTile:@"Down\nDown"];
+    modal = [[RNNBlurModalView alloc] initWithView:@"Test"
+                                    topButtonTitle:@"Top"
+                                    downButtonTile:@"Down\nDown"
+                                         backColor:[UIColor whiteColor]
+                                         LineColor:[UIColor colorWithRed:0.7896 green:0.7896 blue:0.7896 alpha:1.0]];
     modal.dismissButtonRight = YES;
     modal.defaultHideBlock = ^{
         NSLog(@"Code called after the modal view is hidden");

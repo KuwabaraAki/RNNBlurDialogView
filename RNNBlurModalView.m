@@ -146,14 +146,14 @@ typedef void (^RNNBlurCompletion)(void);
 }
 
 
-- (id)initWithView:(NSString*)title topButtonTitle:(NSString *)topTitle downButtonTile:(NSString*)downTitle {
+- (id)initWithView:(NSString*)title topButtonTitle:(NSString *)topTitle downButtonTile:(NSString*)downTitle backColor:(UIColor*)backC LineColor:(UIColor*)lineC {
     
-    UIColor *line = [UIColor colorWithRed:0.7896 green:0.7896 blue:0.7896 alpha:1.0];
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                             0,
                                                             [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.width/1.4,
                                                             [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.height/4)];
-    view.backgroundColor = [UIColor whiteColor];
+    view.backgroundColor = backC;
     view.layer.masksToBounds = YES;
     view.layer.cornerRadius = 7.0f;
     view.layer.rasterizationScale = [[UIScreen mainScreen] scale];
@@ -161,21 +161,21 @@ typedef void (^RNNBlurCompletion)(void);
     view.layer.shadowOpacity = 1.5f;
     view.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
     view.layer.shouldRasterize = YES;
-    view.layer.borderColor = line.CGColor;
+    view.layer.borderColor = lineC.CGColor;
     view.layer.borderWidth = 1.0f;
     
     UIView *viewLineTop = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                    view.frame.size.height/4,
                                                                    view.frame.size.width,
                                                                    1)];
-    viewLineTop.backgroundColor = line;
+    viewLineTop.backgroundColor = lineC;
     [view addSubview:viewLineTop];
     
     UIView *viewLineDown = [[UIView alloc] initWithFrame:CGRectMake(0,
                                                                     view.frame.size.height/1.65,
                                                                     view.frame.size.width,
                                                                     1)];
-    viewLineDown.backgroundColor = line;
+    viewLineDown.backgroundColor = lineC;
     [view addSubview:viewLineDown];
     
     
