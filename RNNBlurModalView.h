@@ -45,7 +45,7 @@ extern NSString * const kRNBlurDidHidewNotification;
 
 - (id)initWithViewController:(UIViewController*)viewController view:(UIView*)view;
 - (id)initWithParentView:(UIView*)parentView view:(UIView*)view;
-- (id)initWithView:(NSString*)title topButtonTitle:(NSString *)topTitle downButtonTile:(NSString*)downTitle;
+- (id)initWithView:(NSString*)title topButtonTitle:(NSString *)topTitle downButtonTile:(NSString*)downTitle backColor:(UIColor*)backC LineColor:(UIColor*)lineC;
 
 
 - (void)show;
