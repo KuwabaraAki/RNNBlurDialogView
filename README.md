@@ -4,8 +4,8 @@
              )](https://developer.apple.com/jp/documentation/)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat
             )](http://mit-license.org)
-[![Issues](https://img.shields.io/github/issues/MMasahito/MotionGraph.svg?style=flat
-           )](https://github.com/MMasahito/MotionGraph/issues?state=open)
+[![Issues](https://img.shields.io/github/issues/MMasahito/RNNBlurModalView.svg?style=flat
+           )](https://github.com/MMasahito/RNNBlurModalView/issues?state=open)
 
 # RNNBlurModal
 
