@@ -150,7 +150,7 @@ typedef void (^RNNBlurCompletion)(void);
     [super layoutSubviews];
     
     CGFloat centerX = self.dismissButtonRight ? _contentView.right : _contentView.left;
-    _dismissButton.center = CGPointMake(centerX -20, _contentView.top +15);
+    _dismissButton.center = CGPointMake(centerX -15, _contentView.top +15);
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
