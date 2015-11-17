@@ -56,11 +56,13 @@
                                                             [[UIApplication sharedApplication].delegate window].rootViewController.view.frame.size.width/2)];
     view.backgroundColor = [UIColor colorWithRed:0.774 green:0.774 blue:0.774 alpha:1.0];
     view.layer.masksToBounds = YES;
-    view.layer.cornerRadius = 25.0f;
+    view.layer.cornerRadius = 10.0f;
     view.layer.shadowOffset = CGSizeMake(15.0f, 15.0f);
     view.layer.shadowOpacity = 5.5f;
     view.layer.shadowColor = [UIColor blackColor].CGColor;
     view.layer.shadowRadius = 5.0f;
+    view.layer.borderColor = [UIColor grayColor].CGColor;
+    view.layer.borderWidth = 1.0f;
 
     
     modal = [[RNNBlurModalView alloc] initWithView:view];
