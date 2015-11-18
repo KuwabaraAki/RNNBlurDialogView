@@ -11,9 +11,31 @@
 
 CustomAlertView 
 
-
 ### App Image ###
 ![Alt Text](https://github.com/MMasahito/RNNBlurDialogView/blob/master/dev.gif)  
+
+
+### pod 'RNNBlurDialogView', '0.1.0' ###
+
+    RNNBlurDialogView *modal;
+    modal = [[RNNBlurDialogView alloc] initWithView:@"Test"
+                                    topButtonTitle:@"Top\nTop"
+                                    downButtonTile:@"Down\nDown"
+                                         backColor:[UIColor whiteColor]
+                                         LineColor:[UIColor colorWithRed:0.7896 green:0.7896 blue:0.7896 alpha:1.0]];
+    modal.dismissButtonRight = YES;
+    modal.defaultHideBlock = ^{
+        NSLog(@"Code called after the modal view is hidden");
+    };
+    modal.topButtonTappedBlock = ^{
+        NSLog(@"Top");
+    };
+    modal.downButtonTappedBlock = ^{
+        NSLog(@"Down");
+    };
+    
+    
+    [modal show];
 
 ### Memo ###
 iOS9 correspondence.  
