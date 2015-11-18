@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "MMizogaki" => "voice.hito@gmail.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/MMasahito/RNNBlurDialogView.git", :tag => "1.0.0" }
-  s.source_files = 'RNNBlurDialogView.{h,m}'
+  s.source       = { :git => "https://github.com/MMasahito/RNNBlurDialogView.git", :tag => s.version.to_s }
+  s.source_files = 'Classes/RNNBlurDialogView.{h,m}'
   s.frameworks   = 'QuartzCore', 'Accelerate'
   s.requires_arc = true
 
