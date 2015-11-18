@@ -6,6 +6,7 @@ Pod::Spec.new do |s|
   s.summary      = "https://github.com/MMasahito/RNNBlurDialogView"
   s.homepage     = "https://github.com/MMasahito"
   s.license      = "MIT"
+  s.author       = "MMizogaki"
   s.author       = { "MMizogaki" => "voice.hito@gmail.com" }
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/MMasahito/RNNBlurDialogView.git", :commit => "c751cfcfaa2e920c0027721002092304bd4f7c56" }
