@@ -1,5 +1,5 @@
 /*
- * RNNBlurModal
+ * RNNBlurDialogView
  *
  * Created by MMizogaki on 10/2/15.
  * Copyright (c) 2015 MMizogaki . All rights reserved.

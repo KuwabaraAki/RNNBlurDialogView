@@ -22,7 +22,7 @@
 		9C647D181BFC26BD001A5FAC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D081BFC26BD001A5FAC /* MainStoryboard.storyboard */; };
 		9C647D191BFC26BD001A5FAC /* MainStoryboard_ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D0A1BFC26BD001A5FAC /* MainStoryboard_ipad.storyboard */; };
 		9C647D1A1BFC26BD001A5FAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C647D0C1BFC26BD001A5FAC /* main.m */; };
-		9C647D1B1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D0D1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist */; };
+		9C647D1B1BFC26BD001A5FAC /* RNBlurDialogExample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D0D1BFC26BD001A5FAC /* RNBlurDialogExample-Info.plist */; };
 		9C647D1C1BFC26BD001A5FAC /* RNNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C647D0F1BFC26BD001A5FAC /* RNNAppDelegate.m */; };
 		9C647D1D1BFC26BD001A5FAC /* RNNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C647D121BFC26BD001A5FAC /* RNNViewController.m */; };
 		9C647D1E1BFC26BD001A5FAC /* sample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D131BFC26BD001A5FAC /* sample.jpeg */; };
@@ -46,7 +46,7 @@
 		9C647D091BFC26BD001A5FAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9C647D0B1BFC26BD001A5FAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_ipad.storyboard; sourceTree = "<group>"; };
 		9C647D0C1BFC26BD001A5FAC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9C647D0D1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RNBlurModalExample-Info.plist"; sourceTree = "<group>"; };
+		9C647D0D1BFC26BD001A5FAC /* RNBlurDialogExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RNBlurDialogExample-Info.plist"; sourceTree = "<group>"; };
 		9C647D0E1BFC26BD001A5FAC /* RNNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNAppDelegate.h; sourceTree = "<group>"; };
 		9C647D0F1BFC26BD001A5FAC /* RNNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNAppDelegate.m; sourceTree = "<group>"; };
 		9C647D101BFC26BD001A5FAC /* RNNBlurModalExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RNNBlurModalExample-Prefix.pch"; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				9C647D081BFC26BD001A5FAC /* MainStoryboard.storyboard */,
 				9C647D0A1BFC26BD001A5FAC /* MainStoryboard_ipad.storyboard */,
 				9C647D0C1BFC26BD001A5FAC /* main.m */,
-				9C647D0D1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist */,
+				9C647D0D1BFC26BD001A5FAC /* RNBlurDialogExample-Info.plist */,
 				9C647D0E1BFC26BD001A5FAC /* RNNAppDelegate.h */,
 				9C647D0F1BFC26BD001A5FAC /* RNNAppDelegate.m */,
 				9C647D101BFC26BD001A5FAC /* RNNBlurModalExample-Prefix.pch */,
@@ -185,7 +185,7 @@
 				3C5B27C2930419E66B84C9C0 /* RNNBlurDialogView.podspec in Resources */,
 				9C647D151BFC26BD001A5FAC /* Default.png in Resources */,
 				9C647D141BFC26BD001A5FAC /* Default-568h@2x.png in Resources */,
-				9C647D1B1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist in Resources */,
+				9C647D1B1BFC26BD001A5FAC /* RNBlurDialogExample-Info.plist in Resources */,
 				9C647D171BFC26BD001A5FAC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +290,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "$(SRCROOT)/RNNBlurDialogExample/RNBlurModalExample-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RNNBlurDialogExample/RNBlurDialogExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MMizogaki.RNNBlurDialogExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -304,7 +304,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "$(SRCROOT)/RNNBlurDialogExample/RNBlurModalExample-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RNNBlurDialogExample/RNBlurDialogExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MMizogaki.RNNBlurDialogExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
