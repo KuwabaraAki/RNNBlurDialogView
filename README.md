@@ -14,6 +14,9 @@ CustomAlertView
 ### App Image ###
 ![Alt Text](https://github.com/MMasahito/RNNBlurDialogView/blob/master/dev.gif)  
 
+
+## With CocoaPods
+Just add this line to your podfile
 ```
 pod 'RNNBlurDialogView', '0.1.0'
 ```
