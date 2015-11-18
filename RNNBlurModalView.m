@@ -150,14 +150,19 @@ typedef void (^RNNBlurCompletion)(void);
     
     float viewheight = 4;
     float topPointY = 4;
-    float duringDraftSaveButtonPointY = 3.5;
-    float duringConsiderationButtonPointY = 1.6;
+    float duringDraftSaveButtonPointY = 3.85;
+    float duringDraftSaveButtonHeight = 2.92;
+    float duringConsiderationButtonPointY = 1.65;
+    float duringConsiderationButtonHeight = 2.61;
     
     if ((topTitle == nil) ||(downTitle == nil)) {
         viewheight = 7.0;
         topPointY = 3;
-        duringDraftSaveButtonPointY = 2.0;
-        duringConsiderationButtonPointY = 2.0;
+        
+        duringDraftSaveButtonPointY = 2.95;
+        duringDraftSaveButtonHeight = 1.55;
+        duringConsiderationButtonPointY = 2.95;
+        duringConsiderationButtonHeight = 1.55;
     }
     
     
@@ -208,30 +213,48 @@ typedef void (^RNNBlurCompletion)(void);
     label.textAlignment = UIBaselineAdjustmentAlignCenters;
     [view addSubview:label];
     
+    UIImage *(^createImageFromUIColor)(UIColor *) = ^(UIColor *color)
+    {
+        CGRect rect = CGRectMake(0, 0, 1, 1);
+        UIGraphicsBeginImageContext(rect.size);
+        CGContextRef contextRef = UIGraphicsGetCurrentContext();
+        CGContextSetFillColorWithColor(contextRef, [color CGColor]);
+        CGContextFillRect(contextRef, rect);
+        UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        return img;
+    };
+    
+    UIImage *backImage = createImageFromUIColor([UIColor colorWithRed:0.7072 green:0.6962 blue:0.7396 alpha:0.49]);
+    
     if (topTitle != nil) {
-        _duringDraftSaveButton = [[UIButton alloc]initWithFrame:CGRectMake(15,
+        _duringDraftSaveButton = [[UIButton alloc]initWithFrame:CGRectMake(0,
                                                                            view.frame.size.height/duringDraftSaveButtonPointY,
                                                                            view.frame.size.width,
-                                                                           view.frame.size.height/3)];
+                                                                           view.frame.size.height/duringDraftSaveButtonHeight)];
         [_duringDraftSaveButton setTitle:topTitle forState:UIControlStateNormal];
         [_duringDraftSaveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_duringDraftSaveButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [_duringDraftSaveButton setBackgroundImage:backImage forState:UIControlStateHighlighted];
         _duringDraftSaveButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         _duringDraftSaveButton.titleLabel.numberOfLines = 2;
+        _duringDraftSaveButton.titleEdgeInsets = (UIEdgeInsets){0,_duringConsiderationButton.imageEdgeInsets.left + 15,0,10};
         [view addSubview:_duringDraftSaveButton];
     }
     
     if (downTitle != nil) {
         
-        _duringConsiderationButton = [[UIButton alloc]initWithFrame:CGRectMake(15,
+        _duringConsiderationButton = [[UIButton alloc]initWithFrame:CGRectMake(0,
                                                                                view.frame.size.height/duringConsiderationButtonPointY,
                                                                                view.frame.size.width,
-                                                                               view.frame.size.height/3)];
+                                                                               view.frame.size.height/duringConsiderationButtonHeight)];
         [_duringConsiderationButton setTitle:downTitle forState:UIControlStateNormal];
         [_duringConsiderationButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_duringConsiderationButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [_duringConsiderationButton setBackgroundImage:backImage forState:UIControlStateHighlighted];
         _duringConsiderationButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         _duringConsiderationButton.titleLabel.numberOfLines = 2;
+        _duringConsiderationButton.titleEdgeInsets = (UIEdgeInsets){0,_duringConsiderationButton.imageEdgeInsets.left + 15,0,10};
         [view addSubview:_duringConsiderationButton];
     }
     _duringDraftSaveButton.exclusiveTouch = YES;
@@ -650,5 +673,6 @@ typedef void (^RNNBlurCompletion)(void);
     
     return returnImage;
 }
+
 
 @end

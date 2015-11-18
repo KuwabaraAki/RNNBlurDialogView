@@ -50,8 +50,8 @@
     
     RNNBlurModalView *modal;
     modal = [[RNNBlurModalView alloc] initWithView:@"Test"
-                                    topButtonTitle:nil
-                                    downButtonTile:@"down"
+                                    topButtonTitle:@"Top\nTop"
+                                    downButtonTile:nil
                                          backColor:[UIColor whiteColor]
                                          LineColor:[UIColor colorWithRed:0.7896 green:0.7896 blue:0.7896 alpha:1.0]];
     modal.dismissButtonRight = YES;
