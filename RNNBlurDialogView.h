@@ -29,7 +29,7 @@
 extern NSString * const kRNBlurDidShowNotification;
 extern NSString * const kRNBlurDidHidewNotification;
 
-@interface RNNBlurModalView : UIView
+@interface RNNBlurDialogView : UIView
 
 @property (assign, readonly) BOOL isVisible;
 

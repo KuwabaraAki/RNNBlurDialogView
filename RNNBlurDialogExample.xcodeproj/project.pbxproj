@@ -7,50 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C5B27C2930419E66B84C9C0 /* RNBlurModalView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3C5B23C833DA9944184E2F7E /* RNBlurModalView.podspec */; };
+		3C5B27C2930419E66B84C9C0 /* RNNBlurDialogView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3C5B23C833DA9944184E2F7E /* RNNBlurDialogView.podspec */; };
 		866E0B40162F2F2D00DE51B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B3F162F2F2D00DE51B9 /* UIKit.framework */; };
 		866E0B42162F2F2D00DE51B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B41162F2F2D00DE51B9 /* Foundation.framework */; };
 		866E0B44162F2F2D00DE51B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B43162F2F2D00DE51B9 /* CoreGraphics.framework */; };
-		866E0B4A162F2F2D00DE51B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B48162F2F2D00DE51B9 /* InfoPlist.strings */; };
-		866E0B4C162F2F2D00DE51B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B4B162F2F2D00DE51B9 /* main.m */; };
-		866E0B50162F2F2D00DE51B9 /* RNNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B4F162F2F2D00DE51B9 /* RNNAppDelegate.m */; };
-		866E0B52162F2F2D00DE51B9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B51162F2F2D00DE51B9 /* Default.png */; };
-		866E0B54162F2F2D00DE51B9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B53162F2F2D00DE51B9 /* Default@2x.png */; };
-		866E0B56162F2F2D00DE51B9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B55162F2F2D00DE51B9 /* Default-568h@2x.png */; };
-		866E0B59162F2F2D00DE51B9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866E0B57162F2F2D00DE51B9 /* MainStoryboard.storyboard */; };
-		866E0B5C162F2F2D00DE51B9 /* RNNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B5B162F2F2D00DE51B9 /* RNNViewController.m */; };
-		866E0B68162F31BE00DE51B9 /* RNNBlurModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B67162F31BE00DE51B9 /* RNNBlurModalView.m */; };
+		866E0B68162F31BE00DE51B9 /* RNNBlurDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 866E0B67162F31BE00DE51B9 /* RNNBlurDialogView.m */; };
 		866E0B6A162F323300DE51B9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B69162F323300DE51B9 /* QuartzCore.framework */; };
 		866E0B75162F44D400DE51B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B74162F44D400DE51B9 /* Accelerate.framework */; };
-		867FFEB31631E18500EE9936 /* MainStoryboard_ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 867FFEB11631E18500EE9936 /* MainStoryboard_ipad.storyboard */; };
 		86A650D9163080D5001DD552 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A650D8163080D5001DD552 /* CoreImage.framework */; };
-		9C8E0CA21BFAC2EF00B18EB8 /* sample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9C8E0CA11BFAC2EF00B18EB8 /* sample.jpeg */; };
+		9C647D141BFC26BD001A5FAC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D031BFC26BD001A5FAC /* Default-568h@2x.png */; };
+		9C647D151BFC26BD001A5FAC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D041BFC26BD001A5FAC /* Default.png */; };
+		9C647D161BFC26BD001A5FAC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D051BFC26BD001A5FAC /* Default@2x.png */; };
+		9C647D171BFC26BD001A5FAC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D061BFC26BD001A5FAC /* InfoPlist.strings */; };
+		9C647D181BFC26BD001A5FAC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D081BFC26BD001A5FAC /* MainStoryboard.storyboard */; };
+		9C647D191BFC26BD001A5FAC /* MainStoryboard_ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D0A1BFC26BD001A5FAC /* MainStoryboard_ipad.storyboard */; };
+		9C647D1A1BFC26BD001A5FAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C647D0C1BFC26BD001A5FAC /* main.m */; };
+		9C647D1B1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D0D1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist */; };
+		9C647D1C1BFC26BD001A5FAC /* RNNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C647D0F1BFC26BD001A5FAC /* RNNAppDelegate.m */; };
+		9C647D1D1BFC26BD001A5FAC /* RNNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C647D121BFC26BD001A5FAC /* RNNViewController.m */; };
+		9C647D1E1BFC26BD001A5FAC /* sample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D131BFC26BD001A5FAC /* sample.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C5B23C833DA9944184E2F7E /* RNBlurModalView.podspec */ = {isa = PBXFileReference; lastKnownFileType = file.podspec; path = RNBlurModalView.podspec; sourceTree = "<group>"; };
+		3C5B23C833DA9944184E2F7E /* RNNBlurDialogView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RNNBlurDialogView.podspec; sourceTree = "<group>"; };
 		866E0B3B162F2F2D00DE51B9 /* RNBlurModalExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNBlurModalExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		866E0B3F162F2F2D00DE51B9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		866E0B41162F2F2D00DE51B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		866E0B43162F2F2D00DE51B9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		866E0B47162F2F2D00DE51B9 /* RNBlurModalExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RNBlurModalExample-Info.plist"; sourceTree = "<group>"; };
-		866E0B49162F2F2D00DE51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		866E0B4B162F2F2D00DE51B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		866E0B4E162F2F2D00DE51B9 /* RNNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNAppDelegate.h; sourceTree = "<group>"; };
-		866E0B4F162F2F2D00DE51B9 /* RNNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNAppDelegate.m; sourceTree = "<group>"; };
-		866E0B51162F2F2D00DE51B9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		866E0B53162F2F2D00DE51B9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		866E0B55162F2F2D00DE51B9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		866E0B58162F2F2D00DE51B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		866E0B5A162F2F2D00DE51B9 /* RNNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNViewController.h; sourceTree = "<group>"; };
-		866E0B5B162F2F2D00DE51B9 /* RNNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNViewController.m; sourceTree = "<group>"; };
-		866E0B66162F31BE00DE51B9 /* RNNBlurModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNBlurModalView.h; sourceTree = SOURCE_ROOT; };
-		866E0B67162F31BE00DE51B9 /* RNNBlurModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNBlurModalView.m; sourceTree = SOURCE_ROOT; };
+		866E0B66162F31BE00DE51B9 /* RNNBlurDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNBlurDialogView.h; sourceTree = SOURCE_ROOT; };
+		866E0B67162F31BE00DE51B9 /* RNNBlurDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNBlurDialogView.m; sourceTree = SOURCE_ROOT; };
 		866E0B69162F323300DE51B9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		866E0B74162F44D400DE51B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		867FFEB21631E18500EE9936 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_ipad.storyboard; sourceTree = "<group>"; };
 		86A650D8163080D5001DD552 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		9C8E0CA11BFAC2EF00B18EB8 /* sample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpeg; sourceTree = "<group>"; };
+		9C647D031BFC26BD001A5FAC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9C647D041BFC26BD001A5FAC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9C647D051BFC26BD001A5FAC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9C647D071BFC26BD001A5FAC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9C647D091BFC26BD001A5FAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9C647D0B1BFC26BD001A5FAC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_ipad.storyboard; sourceTree = "<group>"; };
+		9C647D0C1BFC26BD001A5FAC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C647D0D1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RNBlurModalExample-Info.plist"; sourceTree = "<group>"; };
+		9C647D0E1BFC26BD001A5FAC /* RNNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNAppDelegate.h; sourceTree = "<group>"; };
+		9C647D0F1BFC26BD001A5FAC /* RNNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNAppDelegate.m; sourceTree = "<group>"; };
+		9C647D101BFC26BD001A5FAC /* RNNBlurModalExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RNNBlurModalExample-Prefix.pch"; sourceTree = "<group>"; };
+		9C647D111BFC26BD001A5FAC /* RNNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNViewController.h; sourceTree = "<group>"; };
+		9C647D121BFC26BD001A5FAC /* RNNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNViewController.m; sourceTree = "<group>"; };
+		9C647D131BFC26BD001A5FAC /* sample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,12 +75,12 @@
 		866E0B30162F2F2D00DE51B9 = {
 			isa = PBXGroup;
 			children = (
-				866E0B66162F31BE00DE51B9 /* RNNBlurModalView.h */,
-				866E0B67162F31BE00DE51B9 /* RNNBlurModalView.m */,
-				866E0B45162F2F2D00DE51B9 /* RNBlurModalExample */,
+				9C647D021BFC26BD001A5FAC /* RNNBlurDialogExample */,
+				866E0B66162F31BE00DE51B9 /* RNNBlurDialogView.h */,
+				866E0B67162F31BE00DE51B9 /* RNNBlurDialogView.m */,
 				866E0B3E162F2F2D00DE51B9 /* Frameworks */,
 				866E0B3C162F2F2D00DE51B9 /* Products */,
-				3C5B23C833DA9944184E2F7E /* RNBlurModalView.podspec */,
+				3C5B23C833DA9944184E2F7E /* RNNBlurDialogView.podspec */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,32 +105,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		866E0B45162F2F2D00DE51B9 /* RNBlurModalExample */ = {
+		9C647D021BFC26BD001A5FAC /* RNNBlurDialogExample */ = {
 			isa = PBXGroup;
 			children = (
-				9C8E0CA11BFAC2EF00B18EB8 /* sample.jpeg */,
-				867FFEB11631E18500EE9936 /* MainStoryboard_ipad.storyboard */,
-				866E0B57162F2F2D00DE51B9 /* MainStoryboard.storyboard */,
-				866E0B4E162F2F2D00DE51B9 /* RNNAppDelegate.h */,
-				866E0B4F162F2F2D00DE51B9 /* RNNAppDelegate.m */,
-				866E0B5A162F2F2D00DE51B9 /* RNNViewController.h */,
-				866E0B5B162F2F2D00DE51B9 /* RNNViewController.m */,
-				866E0B46162F2F2D00DE51B9 /* Supporting Files */,
+				9C647D031BFC26BD001A5FAC /* Default-568h@2x.png */,
+				9C647D041BFC26BD001A5FAC /* Default.png */,
+				9C647D051BFC26BD001A5FAC /* Default@2x.png */,
+				9C647D061BFC26BD001A5FAC /* InfoPlist.strings */,
+				9C647D081BFC26BD001A5FAC /* MainStoryboard.storyboard */,
+				9C647D0A1BFC26BD001A5FAC /* MainStoryboard_ipad.storyboard */,
+				9C647D0C1BFC26BD001A5FAC /* main.m */,
+				9C647D0D1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist */,
+				9C647D0E1BFC26BD001A5FAC /* RNNAppDelegate.h */,
+				9C647D0F1BFC26BD001A5FAC /* RNNAppDelegate.m */,
+				9C647D101BFC26BD001A5FAC /* RNNBlurModalExample-Prefix.pch */,
+				9C647D111BFC26BD001A5FAC /* RNNViewController.h */,
+				9C647D121BFC26BD001A5FAC /* RNNViewController.m */,
+				9C647D131BFC26BD001A5FAC /* sample.jpeg */,
 			);
-			path = RNBlurModalExample;
-			sourceTree = "<group>";
-		};
-		866E0B46162F2F2D00DE51B9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				866E0B47162F2F2D00DE51B9 /* RNBlurModalExample-Info.plist */,
-				866E0B48162F2F2D00DE51B9 /* InfoPlist.strings */,
-				866E0B4B162F2F2D00DE51B9 /* main.m */,
-				866E0B51162F2F2D00DE51B9 /* Default.png */,
-				866E0B53162F2F2D00DE51B9 /* Default@2x.png */,
-				866E0B55162F2F2D00DE51B9 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
+			path = RNNBlurDialogExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +156,7 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = MMizogaki;
 			};
-			buildConfigurationList = 866E0B35162F2F2D00DE51B9 /* Build configuration list for PBXProject "RNNBlurModalExample" */;
+			buildConfigurationList = 866E0B35162F2F2D00DE51B9 /* Build configuration list for PBXProject "RNNBlurDialogExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -183,14 +178,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				866E0B4A162F2F2D00DE51B9 /* InfoPlist.strings in Resources */,
-				9C8E0CA21BFAC2EF00B18EB8 /* sample.jpeg in Resources */,
-				866E0B52162F2F2D00DE51B9 /* Default.png in Resources */,
-				866E0B54162F2F2D00DE51B9 /* Default@2x.png in Resources */,
-				866E0B56162F2F2D00DE51B9 /* Default-568h@2x.png in Resources */,
-				866E0B59162F2F2D00DE51B9 /* MainStoryboard.storyboard in Resources */,
-				867FFEB31631E18500EE9936 /* MainStoryboard_ipad.storyboard in Resources */,
-				3C5B27C2930419E66B84C9C0 /* RNBlurModalView.podspec in Resources */,
+				9C647D181BFC26BD001A5FAC /* MainStoryboard.storyboard in Resources */,
+				9C647D161BFC26BD001A5FAC /* Default@2x.png in Resources */,
+				9C647D1E1BFC26BD001A5FAC /* sample.jpeg in Resources */,
+				9C647D191BFC26BD001A5FAC /* MainStoryboard_ipad.storyboard in Resources */,
+				3C5B27C2930419E66B84C9C0 /* RNNBlurDialogView.podspec in Resources */,
+				9C647D151BFC26BD001A5FAC /* Default.png in Resources */,
+				9C647D141BFC26BD001A5FAC /* Default-568h@2x.png in Resources */,
+				9C647D1B1BFC26BD001A5FAC /* RNBlurModalExample-Info.plist in Resources */,
+				9C647D171BFC26BD001A5FAC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,36 +197,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				866E0B4C162F2F2D00DE51B9 /* main.m in Sources */,
-				866E0B50162F2F2D00DE51B9 /* RNNAppDelegate.m in Sources */,
-				866E0B5C162F2F2D00DE51B9 /* RNNViewController.m in Sources */,
-				866E0B68162F31BE00DE51B9 /* RNNBlurModalView.m in Sources */,
+				9C647D1C1BFC26BD001A5FAC /* RNNAppDelegate.m in Sources */,
+				9C647D1A1BFC26BD001A5FAC /* main.m in Sources */,
+				866E0B68162F31BE00DE51B9 /* RNNBlurDialogView.m in Sources */,
+				9C647D1D1BFC26BD001A5FAC /* RNNViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		866E0B48162F2F2D00DE51B9 /* InfoPlist.strings */ = {
+		9C647D061BFC26BD001A5FAC /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				866E0B49162F2F2D00DE51B9 /* en */,
+				9C647D071BFC26BD001A5FAC /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		866E0B57162F2F2D00DE51B9 /* MainStoryboard.storyboard */ = {
+		9C647D081BFC26BD001A5FAC /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				866E0B58162F2F2D00DE51B9 /* en */,
+				9C647D091BFC26BD001A5FAC /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
-		867FFEB11631E18500EE9936 /* MainStoryboard_ipad.storyboard */ = {
+		9C647D0A1BFC26BD001A5FAC /* MainStoryboard_ipad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				867FFEB21631E18500EE9936 /* en */,
+				9C647D0B1BFC26BD001A5FAC /* en */,
 			);
 			name = MainStoryboard_ipad.storyboard;
 			sourceTree = "<group>";
@@ -294,9 +290,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "RNBlurModalExample/RNBlurModalExample-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RNNBlurDialogExample/RNBlurModalExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MMizogaki.RNNBlurModalExample;
+				PRODUCT_BUNDLE_IDENTIFIER = MMizogaki.RNNBlurDialogExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -308,9 +304,9 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "RNBlurModalExample/RNBlurModalExample-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/RNNBlurDialogExample/RNBlurModalExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_BUNDLE_IDENTIFIER = MMizogaki.RNNBlurModalExample;
+				PRODUCT_BUNDLE_IDENTIFIER = MMizogaki.RNNBlurDialogExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -320,7 +316,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		866E0B35162F2F2D00DE51B9 /* Build configuration list for PBXProject "RNNBlurModalExample" */ = {
+		866E0B35162F2F2D00DE51B9 /* Build configuration list for PBXProject "RNNBlurDialogExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				866E0B5D162F2F2D00DE51B9 /* Debug */,

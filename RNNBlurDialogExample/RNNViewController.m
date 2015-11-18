@@ -24,7 +24,7 @@
  */
 
 #import "RNNViewController.h"
-#import "RNNBlurModalView.h"
+#import "RNNBlurDialogView.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface RNNViewController ()
@@ -48,8 +48,8 @@
 
 - (IBAction)onDemoButton:(id)sender {
     
-    RNNBlurModalView *modal;
-    modal = [[RNNBlurModalView alloc] initWithView:@"Test"
+    RNNBlurDialogView *modal;
+    modal = [[RNNBlurDialogView alloc] initWithView:@"Test"
                                     topButtonTitle:@"Top\nTop"
                                     downButtonTile:nil
                                          backColor:[UIColor whiteColor]

@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-#import "RNNBlurModalView.h"
+#import "RNNBlurDialogView.h"
 #import <Accelerate/Accelerate.h>
 #import <QuartzCore/QuartzCore.h>
 
@@ -68,13 +68,13 @@ typedef void (^RNNBlurCompletion)(void);
 @interface RNNCloseButton : UIButton
 @end
 
-@interface RNNBlurModalView ()
+@interface RNNBlurDialogView ()
 @property (assign, readwrite) BOOL isVisible;
 @end
 
 #pragma mark - RNNBlurModalView
 
-@implementation RNNBlurModalView {
+@implementation RNNBlurDialogView {
     UIViewController *_controller;
     UIView *_parentView;
     UIView *_contentView;
