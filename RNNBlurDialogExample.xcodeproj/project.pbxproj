@@ -13,7 +13,6 @@
 		866E0B6A162F323300DE51B9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B69162F323300DE51B9 /* QuartzCore.framework */; };
 		866E0B75162F44D400DE51B9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866E0B74162F44D400DE51B9 /* Accelerate.framework */; };
 		86A650D9163080D5001DD552 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A650D8163080D5001DD552 /* CoreImage.framework */; };
-		9C159A401BFC908600F5C58F /* RNNBlurDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C159A3F1BFC908600F5C58F /* RNNBlurDialogView.m */; };
 		9C647D141BFC26BD001A5FAC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D031BFC26BD001A5FAC /* Default-568h@2x.png */; };
 		9C647D151BFC26BD001A5FAC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D041BFC26BD001A5FAC /* Default.png */; };
 		9C647D161BFC26BD001A5FAC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D051BFC26BD001A5FAC /* Default@2x.png */; };
@@ -25,6 +24,7 @@
 		9C647D1C1BFC26BD001A5FAC /* RNNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C647D0F1BFC26BD001A5FAC /* RNNAppDelegate.m */; };
 		9C647D1D1BFC26BD001A5FAC /* RNNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C647D121BFC26BD001A5FAC /* RNNViewController.m */; };
 		9C647D1E1BFC26BD001A5FAC /* sample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9C647D131BFC26BD001A5FAC /* sample.jpeg */; };
+		9CE9CB6D1BFCC98900A63B1D /* RNNBlurDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9CB6C1BFCC98900A63B1D /* RNNBlurDialogView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +35,6 @@
 		866E0B69162F323300DE51B9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		866E0B74162F44D400DE51B9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		86A650D8163080D5001DD552 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		9C159A3E1BFC908600F5C58F /* RNNBlurDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNBlurDialogView.h; sourceTree = "<group>"; };
-		9C159A3F1BFC908600F5C58F /* RNNBlurDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNBlurDialogView.m; sourceTree = "<group>"; };
 		9C647D031BFC26BD001A5FAC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9C647D041BFC26BD001A5FAC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9C647D051BFC26BD001A5FAC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		9C647D111BFC26BD001A5FAC /* RNNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNViewController.h; sourceTree = "<group>"; };
 		9C647D121BFC26BD001A5FAC /* RNNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNViewController.m; sourceTree = "<group>"; };
 		9C647D131BFC26BD001A5FAC /* sample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpeg; sourceTree = "<group>"; };
+		9CE9CB6B1BFCC98900A63B1D /* RNNBlurDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNBlurDialogView.h; sourceTree = "<group>"; };
+		9CE9CB6C1BFCC98900A63B1D /* RNNBlurDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNBlurDialogView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,7 @@
 		866E0B30162F2F2D00DE51B9 = {
 			isa = PBXGroup;
 			children = (
-				9C159A3E1BFC908600F5C58F /* RNNBlurDialogView.h */,
-				9C159A3F1BFC908600F5C58F /* RNNBlurDialogView.m */,
+				9CE9CB6A1BFCC98900A63B1D /* Classes */,
 				9C647D021BFC26BD001A5FAC /* RNNBlurDialogExample */,
 				866E0B3E162F2F2D00DE51B9 /* Frameworks */,
 				866E0B3C162F2F2D00DE51B9 /* Products */,
@@ -121,6 +120,15 @@
 				9C647D131BFC26BD001A5FAC /* sample.jpeg */,
 			);
 			path = RNNBlurDialogExample;
+			sourceTree = "<group>";
+		};
+		9CE9CB6A1BFCC98900A63B1D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9CE9CB6B1BFCC98900A63B1D /* RNNBlurDialogView.h */,
+				9CE9CB6C1BFCC98900A63B1D /* RNNBlurDialogView.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C159A401BFC908600F5C58F /* RNNBlurDialogView.m in Sources */,
+				9CE9CB6D1BFCC98900A63B1D /* RNNBlurDialogView.m in Sources */,
 				9C647D1C1BFC26BD001A5FAC /* RNNAppDelegate.m in Sources */,
 				9C647D1A1BFC26BD001A5FAC /* main.m in Sources */,
 				9C647D1D1BFC26BD001A5FAC /* RNNViewController.m in Sources */,

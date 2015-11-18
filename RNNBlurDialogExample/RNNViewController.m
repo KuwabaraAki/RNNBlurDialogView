@@ -50,7 +50,7 @@
     
     RNNBlurDialogView *modal;
     modal = [[RNNBlurDialogView alloc] initWithView:@"Test"
-                                    topButtonTitle:@"Top\nTop"
+                                    topButtonTitle:@"Top"
                                     downButtonTile:@"Down\nDown"
                                          backColor:[UIColor whiteColor]
                                          LineColor:[UIColor colorWithRed:0.7896 green:0.7896 blue:0.7896 alpha:1.0]];
@@ -59,10 +59,10 @@
         NSLog(@"Code called after the modal view is hidden");
     };
     modal.topButtonTappedBlock = ^{
-        NSLog(@"Top");
+        NSLog(@"CallBack:TopButtn");
     };
     modal.downButtonTappedBlock = ^{
-        NSLog(@"Down");
+        NSLog(@"CallBack:DownButtn");
     };
     
     
