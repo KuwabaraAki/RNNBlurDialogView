@@ -18,6 +18,16 @@ Just add this line to your podfile
 ```
 pod 'RNNBlurDialogView', '0.1.0'
 ```
+
+Manual installation
+
+Super simple. Just drag & drop RNNBlurDialogView.h/.m into your project.
+
+QuartzCore.framework
+Accelerate.framework
+Additionally in your project, under the Build Phases tab, expand Compile Sources and add RNNBlurDialogView.m.
+
+
 ## Usage
 The simplest way to get up and running with RNNBlurDialogView is to display a default view. Inside of your view controller, write the following code:
 
